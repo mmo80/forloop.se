@@ -99,7 +99,8 @@ gulp.task('css', ['clean-styles', 'bower-restore'], function () {
      .pipe(concat('app.css'))
      .pipe(gulp.dest(config.cssout))
      .pipe(minifyCSS())
-     .pipe(concat('app.min.' + getStamp() + '.css'))
+     //.pipe(concat('app.min.' + getStamp() + '.css'))
+     .pipe(concat('app.min.css'))
      .pipe(gulp.dest(config.cssout));
 });
 
