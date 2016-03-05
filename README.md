@@ -11,8 +11,6 @@ Add following values:
 <appSettings>
   <add key="webpages:Version" value="3.0.0.0" />
   <add key="webpages:Enabled" value="false" />
-  <add key="ClientValidationEnabled" value="true" />
-  <add key="UnobtrusiveJavaScriptEnabled" value="true" />
   
   <add key="SendGridApiKey" value="[YOUR-SENDGRID-APIKEY]"/>
 </appSettings>
