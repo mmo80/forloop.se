@@ -1,4 +1,5 @@
-﻿using SendGrid;
+﻿using ForloopWebApp.Models;
+using SendGrid;
 using System.Configuration;
 using System.Net;
 using System.Net.Http;
@@ -24,7 +25,6 @@ namespace ForloopWebApp.Controllers
         private string GetApiKey()
         {
             var apiKey = ConfigurationManager.AppSettings["SendGridApiKey"];
-
             if (string.IsNullOrEmpty(apiKey))
             {
                 throw new System.ArgumentNullException("No Api-Key found in appSettings!");
@@ -53,12 +53,5 @@ namespace ForloopWebApp.Controllers
             // Send the email.
             transportWeb.DeliverAsync(myMessage);
         }
-    }
-
-
-    public class ContactBody
-    {
-        public string Email { get; set; }
-        public string Message { get; set; }
     }
 }
