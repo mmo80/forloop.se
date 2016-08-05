@@ -4,6 +4,7 @@ Simple static site for my company.
 
 ## Before getting started ##
 Create file 'appSettings.config' in project root.
+
 Add following values:
 
 ```
