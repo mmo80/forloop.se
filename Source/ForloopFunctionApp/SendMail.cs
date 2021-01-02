@@ -19,19 +19,24 @@ namespace ForloopFunctionApp
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
 
-            string name = req.Query["name"];
             string email = req.Query["email"];
+            string message = req.Query["message"];
 
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             dynamic data = JsonConvert.DeserializeObject(requestBody);
-            name ??= data?.name;
+            message ??= data?.message;
             email ??= data?.email;
 
-            string responseMessage = string.IsNullOrEmpty(name)
-                ? "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
-                : $"Hello, {name} and {email}. This HTTP triggered function executed successfully.";
+            string responseMessage = string.IsNullOrEmpty(email)
+                ? "This HTTP triggered function executed successfully. Pass a email and message in the query string or in the request body for a personalized response."
+                : $"Hello, {email} and {message}. This HTTP triggered function executed successfully.";
 
-            return new OkObjectResult(responseMessage);
+            return new OkObjectResult(new SendMailResponse { Message = responseMessage });
         }
+    }
+
+    public class SendMailResponse
+    {
+        public string Message { get; set; }
     }
 }
