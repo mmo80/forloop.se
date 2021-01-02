@@ -1,25 +1,18 @@
 ﻿import '../sass/app.scss';
 
-// jQuery(function ($) {
-//     $("#contact_form").submit(function () {
-//         var email = $("#email").val();
-//         var msg = $("#msg").val();
-//         $.ajax({
-//             type: "POST",
-//             url: "/api/contact/sendmail",
-//             data: {
-//                 Email: email,
-//                 Message: msg
-//             }
-//         })
-//         .done(function (response) {
-//             alert('Your message has been sent. Thank you!');
-//             $("#email").val('');
-//             $("#msg").val('');
-//         })
-//         .fail(function (response) {
-//             alert('Error sending message.');
-//         });
-//         return false; // prevent page refresh
-//     });
-// });
+import { getService, IFormData } from './apiService';
+
+let button = <HTMLElement>document.getElementById("sendbutton");
+button.addEventListener("click", () => {
+    let _service = getService();
+    if (_service != null) {
+        let data:IFormData = {
+            email: (<HTMLInputElement>document.getElementById("email")).value,
+            message: (<HTMLInputElement>document.getElementById("msg")).value
+        };
+        _service.Send(data).then(response => {
+            alert('Your message has been sent. Thank you!');
+            console.log('Successfully sent email', response);
+        });
+    }
+});
