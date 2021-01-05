@@ -14,7 +14,7 @@ Added sendmail backend to a Azure Function.<br>
 ### Links
 [Hosting an SSL Custom Domain Static Website in Azure Storage Account](https://arlanblogs.alvarnet.com/hosting-an-ssl-custom-domain-static-website-in-azure-storage-account/)<br>
 [Azure Functions HTTP trigger -> Secure an HTTP endpoint in production](https://docs.microsoft.com/en-gb/azure/azure-functions/functions-bindings-http-webhook-trigger?tabs=csharp#secure-an-http-endpoint-in-production)<br>
-
+[CDN Rule Engine troubleshooting](https://stackoverflow.com/questions/58697519/azure-cdn-verizon-custom-rewrite-rule-invalid-origin)<br>
 
 ## Before getting started ##
 Add required keys to your function app.<br>
