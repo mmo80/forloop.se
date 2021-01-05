@@ -18,8 +18,9 @@ Added sendmail backend to a Azure Function.<br>
 
 ## Before getting started ##
 Add required keys to your function app.<br>
-Local: Add keys to 'local.settings.json' (azure function project root)
+Local: Add keys to 'local.settings.json' (azure function project root)<br>
 Azure: Through the Azure portal under 'Function App(where SendMail is hosted) > Configuration > Application settings'.<br>
+<br>
 Add following values:
 
 ```
