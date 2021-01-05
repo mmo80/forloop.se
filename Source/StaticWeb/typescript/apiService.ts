@@ -61,7 +61,7 @@ export class ApiService implements IService {
 }
 
 export function getService() : IService | null {
-    let baseUrl = 'https://forloopfunctionapp20210101181429.azurewebsites.net';//StateService.get<string>('common.baseurl');
+    let baseUrl = 'https://func.forloop.se';
     let service: IService | null = null;
     if (baseUrl != null) {
         service = new ApiService(baseUrl)
