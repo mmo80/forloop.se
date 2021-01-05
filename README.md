@@ -16,18 +16,13 @@ Added sendmail backend to a Azure Function.<br>
 [Azure Functions HTTP trigger -> Secure an HTTP endpoint in production](https://docs.microsoft.com/en-gb/azure/azure-functions/functions-bindings-http-webhook-trigger?tabs=csharp#secure-an-http-endpoint-in-production)<br>
 
 
-~~## Before getting started [Obsolete] ##~~
-~~Create file 'appSettings.config' in project root.<br>
-Add following values:~~
+## Before getting started ##
+Add required keys to your function app.<br>
+Local: Add keys to 'local.settings.json' (azure function project root)
+Azure: Through the Azure portal under 'Function App(where SendMail is hosted) > Configuration > Application settings'.<br>
+Add following values:
 
-~~
 ```
-<?xml version="1.0"?>
-<appSettings>
-  <add key="webpages:Version" value="3.0.0.0" />
-  <add key="webpages:Enabled" value="false" />
-  
-  <add key="SendGridApiKey" value="[YOUR-SENDGRID-APIKEY]"/>
-</appSettings>
+"SendGridApiKey": "*****",
+"SendToMail": "your@mail.com"
 ```
-~~
