@@ -16,7 +16,7 @@ export interface IService {
 export class ApiService implements IService {
     private _baseUrl: string;
     private readonly POST: string = "POST";
-    private readonly _partialUrl: string = "api";
+    private readonly _partialUrl: string = "forloop";
 
     constructor(baseUrl: string) {
         this._baseUrl = baseUrl;
@@ -61,7 +61,7 @@ export class ApiService implements IService {
 }
 
 export function getService() : IService | null {
-    let baseUrl = 'https://func.forloop.se';
+    let baseUrl = 'https://forloopapiman.azure-api.net';
     let service: IService | null = null;
     if (baseUrl != null) {
         service = new ApiService(baseUrl)
