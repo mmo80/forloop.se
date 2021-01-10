@@ -12,7 +12,6 @@ button.addEventListener("click", () => {
         };
         _service.Send(data).then(response => {
             alert('Your message has been sent. Thank you!');
-            console.log('Successfully sent email', response);
         });
     }
 });

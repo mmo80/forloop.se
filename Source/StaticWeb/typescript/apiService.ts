@@ -29,8 +29,9 @@ export class ApiService implements IService {
                 email: formdata.email,
                 message: formdata.message
             });
+            let url = `${this._baseUrl}/${this._partialUrl}/sendmail`;
             response = await http<IResponse>(
-                `${this._baseUrl}/${this._partialUrl}/sendmail`,
+                url,
                 {
                     method: this.POST,
                     headers: this.getHeaders(),
@@ -39,8 +40,8 @@ export class ApiService implements IService {
             );
             return response;
         }
-        catch (exception) {
-            this.handleError(exception);
+        catch (e) {
+            this.handleError((e as Error).message);
         }
 
         return Promise.reject("Failed to save formdata.");
@@ -52,10 +53,9 @@ export class ApiService implements IService {
     }
 
     private getHeaders(): Headers {
-        //let aft = document.getElementById('RequestVerificationToken') as HTMLInputElement;
         return new Headers({
             "Content-Type": "application/json; charset=utf-8",
-            //"RequestVerificationToken": aft.value,
+            "Ocp-Apim-Subscription-Key": "bcf7595b5abc4d8492611c75b38e2464",
         });
     }
 }

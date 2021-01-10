@@ -4,7 +4,7 @@
         "sourceMap": true,
         "noImplicitThis": true,
         "noImplicitAny": true,
-        "module": "esnext", //"es6",
+        "module": "esnext",
         "moduleResolution": "node",
         "resolveJsonModule": true,
         "isolatedModules": false,
